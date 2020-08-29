@@ -43,6 +43,7 @@ def scrape_urls(url_dict, download_path, headless=False, downloaded_links=downlo
                     new_path = url_dict[url][4] + '_' + file_name + file_extension
                     if file_path not in file_list and new_path not in file_list and file_path + '_' + url_dict[url][4] not in link_list:
                         try:
+                            time.sleep(4)
                             h_link.click()
                             total_time = 0
                             print('downloading {} to {}'.format(file_path, download_path))

@@ -10,7 +10,7 @@ if __name__ == '__main__':
     #     os.mkdir(webscraping_output)
     # except OSError as error:
     #     print(error)
-    scrape_urls(url_dict=state_url_dict, download_path=state_download_path)
+    # scrape_urls(url_dict=state_url_dict, download_path=state_download_path)
 
     # move webscraping output to correct folder
     # move new files
