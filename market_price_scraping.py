@@ -43,11 +43,25 @@ def get_day_month_from_day(num_days):
     row_column = [abs((increment_day % 7) ) + 1, abs(increment_day % 5 ) +1 ]
     return increment_month, row_column
 
-def load_webpage(driver):
+def load_webpage(driver, sleep_time = 4):
+    """
+    :param driver: takes a chrome driver instance
+    :return: loads the dialy market price website. then sleeps
+    """
     driver.get('http://dam.gov.bd/market_daily_price_report?L=E')
-    time.sleep(4)
+    time.sleep(sleep_time)
 
 def click_months(driver, months_back, z, i, j):
+    """
+    From http://dam.gov.bd/market_daily_price_report?L=E , tries to click a certain number of months backwards
+    :param driver: takes a chrome driver instance
+    :param months_back: number of months back to click
+    :param z: tbh, no idea
+    :param i: day of the week
+    :param j: week in the month
+    :return:
+    """
+
     prev_month = driver.find_element_by_class_name('xdsoft_prev')
 
     date_button = driver.find_element_by_id("date")
@@ -68,6 +82,15 @@ def click_months(driver, months_back, z, i, j):
     time.sleep(2)
 
 def select_location(driver,a,b,c,d):
+    """
+    From http://dam.gov.bd/market_daily_price_report?L=E , navigates to desired location
+    :param driver: chrome driver instance
+    :param a: Division to scroll to. I.e. 1 corresponds to the first division, 2 to 2nd, etc.
+    :param b: District to scroll to
+    :param c: Upazila to scroll to
+    :param d: Market to scroll to
+    :return:
+    """
     # Goes through each division, etc you're a smart reader I'm sure
     select_div = Select(driver.find_element_by_id("drp_division_eng"))
     select_div.select_by_index(a)
@@ -149,12 +172,19 @@ def select_location(driver,a,b,c,d):
 # pickle.dump(my_dictionary,f)
 # f.close()
 def get_prices(driver, months_back, z,a,b,c,d,j,i):
+    """
 
-    select_price = Select(driver.find_element_by_xpath('//*[@id="PriceType_id"]'))
-
-    gen_button = driver.find_element_by_css_selector("input[type='submit']")
-
-    date_scroller = driver.find_element_by_css_selector('div.xdsoft_label.xdsoft_year')
+    :param driver: Chrome webdriver instance
+    :param months_back: Number of months you want to scrape. Works by scraping x months back from todays date.
+    :param z: Tbh Not sure what this does
+    :param a: Division to scroll to. I.e. 1 corresponds to the first division, 2 to 2nd, etc.
+    :param b: District to scroll to
+    :param c: Upazila to scroll to
+    :param d: Market to scroll to
+    :param j: Week in month to select
+    :param i: day of the week to select
+    :return: Navigates to desired part of website and return an na_check to see if that webpage should be written to csv
+    """
 
     load_webpage(driver=driver)
     try:

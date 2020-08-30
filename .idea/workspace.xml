@@ -27,14 +27,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/market_price_scraping.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="236" column="43" lean-forward="true" selection-start-line="236" selection-start-column="43" selection-end-line="236" selection-end-column="43" />
+            <state relative-caret-position="-766">
+              <caret line="87" column="4" selection-start-line="87" selection-start-column="4" selection-end-line="87" selection-end-column="4" />
               <folding>
                 <element signature="e#134#164#0" expanded="true" />
                 <element signature="e#1185#1581#0" />
-                <element signature="e#1687#1766#0" />
-                <element signature="e#1798#2325#0" />
-                <element signature="e#2383#2925#0" />
                 <element signature="e#1128#1208#0" />
                 <element signature="e#6676#7755#0" />
                 <element signature="e#7959#8104#0" />
@@ -157,7 +154,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="300" />
+    <option name="x" value="307" />
     <option name="y" value="23" />
     <option name="width" value="1916" />
     <option name="height" value="990" />
@@ -297,7 +294,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="46" y="23" width="1916" height="990" extended-state="0" />
+    <frame x="307" y="23" width="1916" height="990" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2524013" />
@@ -326,17 +323,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/market_price_scraping.py</url>
-          <line>284</line>
+          <line>314</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/market_price_scraping.py</url>
-          <line>178</line>
+          <line>208</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/market_price_scraping.py</url>
-          <line>215</line>
+          <line>245</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
@@ -565,14 +562,11 @@ new_dict = dict(zip(new_list, dict_vals_duplicated_suffix))</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/market_price_scraping.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="236" column="43" lean-forward="true" selection-start-line="236" selection-start-column="43" selection-end-line="236" selection-end-column="43" />
+        <state relative-caret-position="-766">
+          <caret line="87" column="4" selection-start-line="87" selection-start-column="4" selection-end-line="87" selection-end-column="4" />
           <folding>
             <element signature="e#134#164#0" expanded="true" />
             <element signature="e#1185#1581#0" />
-            <element signature="e#1687#1766#0" />
-            <element signature="e#1798#2325#0" />
-            <element signature="e#2383#2925#0" />
             <element signature="e#1128#1208#0" />
             <element signature="e#6676#7755#0" />
             <element signature="e#7959#8104#0" />
