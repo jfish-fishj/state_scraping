@@ -17,20 +17,72 @@ import pickle
 from pathos.multiprocessing import ProcessingPool as Pool
 from webdriver_manager.chrome import ChromeDriverManager
 from itertools import islice
+import datetime as dt
+import math
 import os
 # initialize webdriver
 
 
 ##################################################### Definitions #####################################################
 
-months_back = 12  # select how many months back your desired start date is
+# months_back = 12  # select how many months back your desired start date is
 months_for = 11  # select how many months forward you want to scrape
-months_run = months_back - months_for
+# months_run = months_back - months_for
 
 # order of loop (from out to in) is as follows:
 # loops through all subdistricts, through all months, through each day of the week, through each week of the month
 
-my_dictionary = {}
+# my_dictionary = {}
+def get_day_month_from_day(num_days):
+    todays_date = dt.datetime.now() # get todays date
+    start_day = dt.datetime.strptime('2019-01-01', '%Y-%m-%d')
+    increment_date = start_day + dt.timedelta(days=num_days-1)
+    increment_month = abs(increment_date.month - todays_date.month) + 12*(start_day.year-todays_date.year)
+    increment_day = abs(increment_date.day - todays_date.day)
+    # days
+    row_column = [abs((increment_day % 7) ) + 1, abs(increment_day % 5 ) +1 ]
+    return increment_month, row_column
+
+def load_webpage(driver):
+    driver.get('http://dam.gov.bd/market_daily_price_report?L=E')
+    time.sleep(4)
+
+def click_months(driver, months_back, z, i, j):
+    prev_month = driver.find_element_by_class_name('xdsoft_prev')
+
+    date_button = driver.find_element_by_id("date")
+    date_button.click()
+    time.sleep(2)
+
+    # This gets you to your "starting month"
+    x = 0
+    while x < months_back - z:
+        prev_month.click()
+        x = x + 1
+    time.sleep(2)
+
+    # Goes through days of the month
+    day_xpath = "/html/body/div[2]/div[1]/div[2]/table/tbody/tr[{}]/td[{}]/div".format(j, i)
+    my_day = driver.find_element_by_xpath(day_xpath)
+    my_day.click()
+    time.sleep(2)
+
+def select_location(driver,a,b,c,d):
+    # Goes through each division, etc you're a smart reader I'm sure
+    select_div = Select(driver.find_element_by_id("drp_division_eng"))
+    select_div.select_by_index(a)
+    time.sleep(4)
+
+    select_dis = Select(driver.find_element_by_id("drp_district_eng"))
+    select_dis.select_by_index(b)
+    time.sleep(4)
+
+    select_upa = Select(driver.find_element_by_id("drp_subdistrict_eng"))
+    select_upa.select_by_index(c)
+    time.sleep(4)
+
+    select_mkt = Select(driver.find_element_by_id("drp_market_eng"))
+    select_mkt.select_by_index(d)
 
 # select_price = Select(driver.find_element_by_xpath('//*[@id="PriceType_id"]'))
 #
@@ -96,77 +148,87 @@ my_dictionary = {}
 # f = open("full_dictionary.pkl", "wb")
 # pickle.dump(my_dictionary,f)
 # f.close()
+def get_prices(driver, months_back, z,a,b,c,d,j,i):
+
+    select_price = Select(driver.find_element_by_xpath('//*[@id="PriceType_id"]'))
+
+    gen_button = driver.find_element_by_css_selector("input[type='submit']")
+
+    date_scroller = driver.find_element_by_css_selector('div.xdsoft_label.xdsoft_year')
+
+    load_webpage(driver=driver)
+    try:
+        click_months(driver=driver, months_back=months_back, z=z, i=i, j=j)
+    except NoSuchElementException:
+        print('No such element exception, trying to reload page and scrape again')
+        load_webpage(driver=driver)
+        click_months(driver=driver, months_back=months_back, z=z, i=i, j=j)
+
+    try:
+        select_location(driver=driver,a=a, b=b,c=c,d=d)
+    except NoSuchElementException:
+        print('No such element exception, trying to reload page and scrape again')
+        load_webpage(driver=driver)
+        click_months(driver=driver, months_back=months_back, z=z, i=i, j=j)
+        select_location(driver=driver, a=a, b=b, c=c, d=d)
+
+    na_check = driver.find_element_by_xpath('//*[@id="frm_filter"]/div/div[4]/div[2]/button/span[1]').text
+    return na_check
+
 
 def scrape_prices(months_for, suffix, my_dictionary, download_folder, skip_vals):
+    months_back = 12
+    months_run = months_back - months_for
     driver = webdriver.Chrome(ChromeDriverManager().install())
     driver.get('http://dam.gov.bd/market_daily_price_report?L=E')
     with open(skip_vals) as text_file:
         skip_list = [link.rstrip() for link in text_file]
     text_file = open(skip_vals, mode='a+')
-    for z in range(0, months_for):
-        for i in range(1, 8):
-            for j in range(3, 6):
+    for z in range(0,1 ):
+        for i in range(1, 8): # days of the week
+            for j in range(1, 6):  # weeks of the month
                 for value in my_dictionary.values():
+                    value = value + '_' + str(i) + '_' + str(j)
                     if value not in skip_list:
                         try:
+                            print(value)
                             newval = value.replace("{", "")
                             newval = newval.replace("}_{", " ")
                             newval = newval.replace("}", "")
                             newval = newval.replace("_", " ")
-                            a,b,c,d = (int(x) for x in newval.split())
-
+                            a,b,c,d,e,f = (int(x) for x in newval.split())
+                            # get num_click from e
+                            # num_month_clicks = get_day_month_from_day(e)[0]
+                            # row_column = get_day_month_from_day(e)[1]
                             # Have to refresh page each time
-                            driver.get('http://dam.gov.bd/market_daily_price_report?L=E')
-                            time.sleep(4)
+                            na_check = get_prices(
+                                    driver=driver,
+                                    a=a,
+                                    b=b,
+                                    c=c,
+                                    d=d,
+                                    i=i,
+                                    j=j,
+                                    months_back=months_back,
+                                    z=z
+                                )
 
-                            select_price = Select(driver.find_element_by_xpath('//*[@id="PriceType_id"]'))
-
-                            gen_button = driver.find_element_by_css_selector("input[type='submit']")
-
-                            date_scroller = driver.find_element_by_css_selector('div.xdsoft_label.xdsoft_year')
-                            prev_month = driver.find_element_by_class_name('xdsoft_prev')
-
-                            date_button = driver.find_element_by_id("date")
-                            date_button.click()
-                            time.sleep(2)
-
-                            # This gets you to your "starting month"
-                            x = 0
-                            while x < months_back - z:
-                                prev_month.click()
-                                x = x + 1
-                            time.sleep(2)
-
-                            # Goes through days of the month
-                            day_xpath = "/html/body/div[2]/div[1]/div[2]/table/tbody/tr[{}]/td[{}]/div".format(j, i)
-                            my_day = driver.find_element_by_xpath(day_xpath)
-                            my_day.click()
-                            time.sleep(2)
-
-                            # Goes through each division, etc you're a smart reader I'm sure
-                            select_div = Select(driver.find_element_by_id("drp_division_eng"))
-                            select_div.select_by_index(a)
-                            time.sleep(4)
-
-                            select_dis = Select(driver.find_element_by_id("drp_district_eng"))
-                            select_dis.select_by_index(b)
-                            time.sleep(4)
-
-                            select_upa = Select(driver.find_element_by_id("drp_subdistrict_eng"))
-                            select_upa.select_by_index(c)
-                            time.sleep(4)
-
-                            select_mkt = Select(driver.find_element_by_id("drp_market_eng"))
-                            select_mkt.select_by_index(d)
-                            na_check = driver.find_element_by_xpath('//*[@id="frm_filter"]/div/div[4]/div[2]/button/span[1]').text
-                            print(na_check)
-                            # print(na_check2)
-
-                            if na_check == 'No Market Found!':
-                                print("no market here")
                         except NoSuchElementException:
                             print('Unable to access element for {}'.format(value))
-
+                            # reload the web page
+                            na_check = get_prices(
+                                driver=driver,
+                                a=a,
+                                b=b,
+                                c=c,
+                                d=d,
+                                i=i,
+                                j=j,
+                                months_back=months_back,
+                                z=z
+                            )
+                        if na_check == 'No Market Found!':
+                            print("no market here")
                         else:
                             time.sleep(1.5)
 
@@ -213,13 +275,19 @@ def split_dicts(dictionary, n_partions):
 
 
 if __name__ =='__main__':
-    with open('/Users/joefish/Downloads/full_dictionary.pkl', 'rb') as f:
+    with open('/Users/joefish/Downloads/dict_1st_half.pickle', 'rb') as f:
         my_dictionary = pickle.load(f)
+    # dict_vals = my_dictionary.values()
+    list_of_suffixes = ['_' + str(x) for x in range(1, 366)]
+    # dict_vals_duplicated_suffix = [x + suffix for suffix in list_of_suffixes for x in dict_vals]
+    # new_list = [str(x) for x in range(len(dict_vals_duplicated_suffix))]
+    # new_dict = dict(zip(new_list, dict_vals_duplicated_suffix))
     list_of_dicts = split_dicts(my_dictionary, n_partions=4)
-    list_of_suffixes = ['' for x in range(len(list_of_dicts))]
+    get_day_month_from_day(1)
     with Pool(4) as p:
-        p.map(scrape_prices, [months_for]*len(list_of_dicts), list_of_suffixes, list_of_dicts,
+        p.map(scrape_prices, [months_for]*len(list_of_dicts), list_of_suffixes*len(list_of_dicts), list_of_dicts,
               ['/Users/joefish/Desktop/market_prices/']*len(list_of_dicts),
               ['/Users/joefish/Desktop/market_prices/skip_vals.txt']*len(list_of_dicts))
     p.close()
     p.join()
+

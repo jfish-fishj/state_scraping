@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b6eb094-a82d-4462-a6ba-7ce7a4509531" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/market_price_scraping.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/court_order_scraping.py" beforeDir="false" afterPath="$PROJECT_DIR$/court_order_scraping.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/master_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/master_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market_price_scraping.py" beforeDir="false" afterPath="$PROJECT_DIR$/market_price_scraping.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,12 +27,47 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/market_price_scraping.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="99" column="81" selection-start-line="99" selection-start-column="81" selection-end-line="99" selection-end-column="81" />
+            <state relative-caret-position="80">
+              <caret line="236" column="43" lean-forward="true" selection-start-line="236" selection-start-column="43" selection-end-line="236" selection-end-column="43" />
               <folding>
                 <element signature="e#134#164#0" expanded="true" />
+                <element signature="e#1185#1581#0" />
+                <element signature="e#1687#1766#0" />
+                <element signature="e#1798#2325#0" />
+                <element signature="e#2383#2925#0" />
                 <element signature="e#1128#1208#0" />
-                <element signature="e#2891#7673#0" />
+                <element signature="e#6676#7755#0" />
+                <element signature="e#7959#8104#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pathos/multiprocessing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="136" selection-start-line="136" selection-end-line="136" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="241" selection-start-line="241" selection-end-line="241" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="84" column="36" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
+              <folding>
+                <element signature="e#3061#3074#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,7 +76,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/create_directories.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
+            <state relative-caret-position="272">
               <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -108,6 +140,7 @@
         <option value="$PROJECT_DIR$/data_constants.py" />
         <option value="$PROJECT_DIR$/court_order_scraping.py" />
         <option value="$PROJECT_DIR$/master_file.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
         <option value="$PROJECT_DIR$/market_price_scraping.py" />
       </list>
     </option>
@@ -124,7 +157,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="153" />
+    <option name="x" value="300" />
     <option name="y" value="23" />
     <option name="width" value="1916" />
     <option name="height" value="990" />
@@ -142,6 +175,15 @@
               <item name="state_scraping" type="b2602c69:ProjectViewProjectNode" />
               <item name="state_scraping" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="state_scraping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="state_scraping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -149,6 +191,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -206,13 +249,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="scratch" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="state_scraping" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.market_price_scraping" />
       <item itemvalue="Python.master_file" />
+      <item itemvalue="Python.scratch" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.market_price_scraping" />
+        <item itemvalue="Python.scratch" />
         <item itemvalue="Python.master_file" />
       </list>
     </recent_temporary>
@@ -231,7 +297,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="144" y="23" width="1916" height="990" extended-state="0" />
+    <frame x="46" y="23" width="1916" height="990" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2524013" />
@@ -260,26 +326,143 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/market_price_scraping.py</url>
-          <line>217</line>
+          <line>284</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/market_price_scraping.py</url>
+          <line>178</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/market_price_scraping.py</url>
+          <line>215</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>get_day_month_from_day2(20)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>def get_day_month_from_day2(num_days):
+    todays_date = dt.datetime.now() # get todays date
+    start_day = dt.datetime.strptime('2019-01-01', '%Y-%m-%d')
+    increment_date = start_day + dt.timedelta(days=num_days-1)
+    increment_month = abs(increment_date.month - todays_date.month) + 12*(start_day.year-todays_date.year)
+    increment_day = abs(increment_date.day - todays_date.day)
+    # days
+    row_column = [abs((increment_day % 7) ) + 1, abs(increment_day % 5 ) +1 ]
+    return increment_month, row_column</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>increment_day = abs(increment_date.day - todays_date.day)
+# days
+row_column = [abs((increment_day % 7) ) +1, abs(increment_day % 5 ) +1  ]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>increment_day = abs(increment_date.day - todays_date.day)
+# days
+row_column = [abs((increment_day % 7) ), abs(increment_day % 5 ) ]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>def get_day_month_from_day2(num_days):
+    todays_date = dt.datetime.now() # get todays date
+    start_day = dt.datetime.strptime('2019-01-01', '%Y-%m-%d')
+    increment_date = start_day + dt.timedelta(days=num_days-1)
+    increment_month = abs(increment_date.month - todays_date.month) + 12*(start_day.year-todays_date.year)
+    increment_day = increment_date.day - todays_date.day
+    # days
+    row_column = [abs(math.floor(increment_day / 7) - 1), abs(increment_day //5 +1) ]
+    return increment_month, row_column</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>get_day_month_from_day2(1)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>def get_day_month_from_day2(num_days):
+    todays_date = dt.datetime.now()
+    start_day = dt.datetime.strptime('2019-01-01', '%Y-%m-%d')
+    increment_date = start_day + dt.timedelta(days=num_days-1)
+    increment_month = abs(increment_date.month - todays_date.month)
+    increment_day = increment_date.day - todays_date.day
+    # days
+    row_column = [abs(math.floor(increment_day / 7) - 1), abs(increment_day //5 +1) ]
+    return increment_month, row_column</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>new_list = [str(x) for x in range(len(dict_vals_duplicated_suffix))]
+new_dict = dict(zip(new_list, dict_vals_duplicated_suffix))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>new_list = [str(x) for x in len(dict_vals_duplicated_suffix)]
+new_dict = dict(zip(new_list, dict_vals_duplicated_suffix))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>len(my_dictionary)</expression-string>
+        <expression-string>[abs((increment_day % 7) ), abs(increment_day % 5 ) ]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>len(list_of_dicts[2])</expression-string>
+        <expression-string>28%5</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>len(list_of_dicts[3])</expression-string>
+        <expression-string>[abs(math.floor(increment_day / 7) - 1), abs(increment_day //5 +1) ]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>get_day_month_from_day(e)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>len(dict_vals_duplicated_suffix)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>get_day_month_from_day(100)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>[math.floor(19 / 7), 19 //7 ]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>[19 / 7, 19 //7 ]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>dt.datetime.now()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -288,16 +471,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/dropbox_integration.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create_directories.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scraping_validation.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -342,14 +515,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="1751" selection-start-line="1751" selection-end-line="1751" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create_directories.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="84" column="36" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
+          <folding>
+            <element signature="e#3061#3074#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pathos/multiprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="241" selection-start-line="241" selection-end-line="241" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/market_price_scraping.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="99" column="81" selection-start-line="99" selection-start-column="81" selection-end-line="99" selection-end-column="81" />
+        <state relative-caret-position="80">
+          <caret line="236" column="43" lean-forward="true" selection-start-line="236" selection-start-column="43" selection-end-line="236" selection-end-column="43" />
           <folding>
             <element signature="e#134#164#0" expanded="true" />
+            <element signature="e#1185#1581#0" />
+            <element signature="e#1687#1766#0" />
+            <element signature="e#1798#2325#0" />
+            <element signature="e#2383#2925#0" />
             <element signature="e#1128#1208#0" />
-            <element signature="e#2891#7673#0" />
+            <element signature="e#6676#7755#0" />
+            <element signature="e#7959#8104#0" />
           </folding>
         </state>
       </provider>
