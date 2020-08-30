@@ -220,13 +220,13 @@ def scrape_prices(months_for, suffix, my_dictionary, download_folder, skip_vals)
                 for value in my_dictionary.values():
                     value = value + '_' + str(i) + '_' + str(j)
                     if value not in skip_list:
+                        print(value)
+                        newval = value.replace("{", "")
+                        newval = newval.replace("}_{", " ")
+                        newval = newval.replace("}", "")
+                        newval = newval.replace("_", " ")
+                        a, b, c, d, e, f = (int(x) for x in newval.split())
                         try:
-                            print(value)
-                            newval = value.replace("{", "")
-                            newval = newval.replace("}_{", " ")
-                            newval = newval.replace("}", "")
-                            newval = newval.replace("_", " ")
-                            a,b,c,d,e,f = (int(x) for x in newval.split())
                             # get num_click from e
                             # num_month_clicks = get_day_month_from_day(e)[0]
                             # row_column = get_day_month_from_day(e)[1]
