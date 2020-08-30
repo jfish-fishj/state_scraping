@@ -205,6 +205,27 @@ def get_prices(driver, months_back, z,a,b,c,d,j,i):
     na_check = driver.find_element_by_xpath('//*[@id="frm_filter"]/div/div[4]/div[2]/button/span[1]').text
     return na_check
 
+def get_table(driver):
+    select_price = Select(driver.find_element_by_xpath('//*[@id="PriceType_id"]'))
+    select_price.select_by_index(1)
+    time.sleep(1.5)
+
+    gen_button = driver.find_element_by_css_selector("input[type='submit']")
+    gen_button.click()
+    time.sleep(2)
+
+    # Now actually writing the table, I'm sure there are more efficient ways of
+    # Doing this but hey it's not too slow
+    table = driver.find_element_by_xpath('//*[@id="printArea"]/div[2]/table')
+    dater = driver.find_element_by_xpath('//*[@id="printArea"]/div[1]')
+    rawtitle = driver.find_element_by_xpath('//*[@id="printArea"]/div[1]').text
+    titlefinal = rawtitle.replace("\n", "")
+    titlefinal = titlefinal.replace("Daily Market Price List ofDistrict - ", "")
+    titlefinal = titlefinal.replace(" , Market - ", "_")
+    titlefinal = titlefinal.replace("Date: ", "_")
+    titlefinal = titlefinal.replace("/", "_")
+    return [table, titlefinal]
+
 
 def scrape_prices(months_for, suffix, my_dictionary, download_folder, skip_vals):
     months_back = 12
@@ -261,25 +282,23 @@ def scrape_prices(months_for, suffix, my_dictionary, download_folder, skip_vals)
                             print("no market here")
                         else:
                             time.sleep(1.5)
-
-                            select_price = Select(driver.find_element_by_xpath('//*[@id="PriceType_id"]'))
-                            select_price.select_by_index(1)
-                            time.sleep(1.5)
-
-                            gen_button = driver.find_element_by_css_selector("input[type='submit']")
-                            gen_button.click()
-                            time.sleep(2)
-
-                            # Now actually writing the table, I'm sure there are more efficient ways of
-                            # Doing this but hey it's not too slow
-                            table = driver.find_element_by_xpath('//*[@id="printArea"]/div[2]/table')
-                            dater = driver.find_element_by_xpath('//*[@id="printArea"]/div[1]')
-                            rawtitle = driver.find_element_by_xpath('//*[@id="printArea"]/div[1]').text
-                            titlefinal = rawtitle.replace("\n", "")
-                            titlefinal = titlefinal.replace("Daily Market Price List ofDistrict - ", "")
-                            titlefinal = titlefinal.replace(" , Market - ", "_")
-                            titlefinal = titlefinal.replace("Date: ", "_")
-                            titlefinal = titlefinal.replace("/", "_")
+                            try:
+                                results = get_table(driver=driver)
+                            except NoSuchElementException:
+                                na_check = get_prices(
+                                    driver=driver,
+                                    a=a,
+                                    b=b,
+                                    c=c,
+                                    d=d,
+                                    i=i,
+                                    j=j,
+                                    months_back=months_back,
+                                    z=z
+                                )
+                                results = get_table(driver=driver)
+                            table = results[0]
+                            titlefinal = results[1]
 
                             with open(download_folder + titlefinal + '.csv', 'w', newline='') as csvfile:
                                 wr = csv.writer(csvfile)
