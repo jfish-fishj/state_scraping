@@ -235,18 +235,18 @@ def scrape_prices(months_for, suffix, my_dictionary, download_folder, skip_vals)
     with open(skip_vals) as text_file:
         skip_list = [link.rstrip() for link in text_file]
     text_file = open(skip_vals, mode='a+')
-    for z in range(0,1 ):
+    for z in range(0,12): # months in a year
         for i in range(1, 8): # days of the week
             for j in range(1, 6):  # weeks of the month
                 for value in my_dictionary.values():
-                    value = value + '_' + str(i) + '_' + str(j)
+                    value = value + '_' + str(i) + '_' + str(j) + '_' + str(z)
                     if value not in skip_list:
                         print(value)
                         newval = value.replace("{", "")
                         newval = newval.replace("}_{", " ")
                         newval = newval.replace("}", "")
                         newval = newval.replace("_", " ")
-                        a, b, c, d, e, f = (int(x) for x in newval.split())
+                        a, b, c, d, e, f, g = (int(x) for x in newval.split())
                         try:
                             # get num_click from e
                             # num_month_clicks = get_day_month_from_day(e)[0]
@@ -261,7 +261,7 @@ def scrape_prices(months_for, suffix, my_dictionary, download_folder, skip_vals)
                                     i=i,
                                     j=j,
                                     months_back=months_back,
-                                    z=z
+                                    z=g
                                 )
 
                         except NoSuchElementException:
@@ -280,6 +280,7 @@ def scrape_prices(months_for, suffix, my_dictionary, download_folder, skip_vals)
                             )
                         if na_check == 'No Market Found!':
                             print("no market here")
+                            text_file.write('{} \n'.format(value))
                         else:
                             time.sleep(1.5)
                             try:
@@ -294,7 +295,7 @@ def scrape_prices(months_for, suffix, my_dictionary, download_folder, skip_vals)
                                     i=i,
                                     j=j,
                                     months_back=months_back,
-                                    z=z
+                                    z=g
                                 )
                                 results = get_table(driver=driver)
                             table = results[0]

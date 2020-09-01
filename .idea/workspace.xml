@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b6eb094-a82d-4462-a6ba-7ce7a4509531" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/data_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/market_price_scraping.py" beforeDir="false" afterPath="$PROJECT_DIR$/market_price_scraping.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,35 +28,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/market_price_scraping.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="191">
+              <caret line="292" column="40" lean-forward="true" selection-start-line="292" selection-start-column="40" selection-end-line="292" selection-end-column="40" />
               <folding>
                 <element signature="e#134#164#0" expanded="true" />
                 <element signature="e#1185#1581#0" />
-                <element signature="e#1985#2512#0" />
                 <element signature="e#2890#3439#0" />
                 <element signature="e#1128#1208#0" />
                 <element signature="e#7959#8104#0" />
                 <element signature="e#7748#7938#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pathos/multiprocessing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="136" selection-start-line="136" selection-end-line="136" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="241" selection-start-line="241" selection-end-line="241" />
             </state>
           </provider>
         </entry>
@@ -87,8 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+            <state relative-caret-position="142">
+              <caret line="33" column="83" lean-forward="true" selection-start-line="33" selection-start-column="83" selection-end-line="33" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -96,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/master_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+            <state relative-caret-position="180">
+              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -137,10 +119,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/data_constants.py" />
         <option value="$PROJECT_DIR$/court_order_scraping.py" />
-        <option value="$PROJECT_DIR$/master_file.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
+        <option value="$PROJECT_DIR$/data_constants.py" />
+        <option value="$PROJECT_DIR$/master_file.py" />
         <option value="$PROJECT_DIR$/market_price_scraping.py" />
       </list>
     </option>
@@ -157,7 +139,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="199" />
+    <option name="x" value="73" />
     <option name="y" value="23" />
     <option name="width" value="1916" />
     <option name="height" value="990" />
@@ -278,8 +260,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.market_price_scraping" />
-        <item itemvalue="Python.scratch" />
         <item itemvalue="Python.master_file" />
+        <item itemvalue="Python.scratch" />
       </list>
     </recent_temporary>
   </component>
@@ -297,7 +279,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="199" y="23" width="1916" height="990" extended-state="0" />
+    <frame x="119" y="23" width="1916" height="990" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2524013" />
@@ -481,23 +463,6 @@ new_dict = dict(zip(new_list, dict_vals_duplicated_suffix))</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/master_file.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/selenium/webdriver/support/select.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -505,30 +470,10 @@ new_dict = dict(zip(new_list, dict_vals_duplicated_suffix))</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/court_order_scraping.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="1751" selection-start-line="1751" selection-end-line="1751" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create_directories.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -563,14 +508,50 @@ new_dict = dict(zip(new_list, dict_vals_duplicated_suffix))</expression-string>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/master_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/court_order_scraping.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create_directories.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="33" column="83" lean-forward="true" selection-start-line="33" selection-start-column="83" selection-end-line="33" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/market_price_scraping.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="191">
+          <caret line="292" column="40" lean-forward="true" selection-start-line="292" selection-start-column="40" selection-end-line="292" selection-end-column="40" />
           <folding>
             <element signature="e#134#164#0" expanded="true" />
             <element signature="e#1185#1581#0" />
-            <element signature="e#1985#2512#0" />
             <element signature="e#2890#3439#0" />
             <element signature="e#1128#1208#0" />
             <element signature="e#7959#8104#0" />

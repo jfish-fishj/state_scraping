@@ -109,7 +109,7 @@ state_list = [
     ]
 webscraping_output = '/Users/joefish/Desktop/webscraping_output/'
 state_directory = '/Users/joefish/Desktop/state_webscraping/'
-date = '8_28_2020'
+date = '8_31_2020'
 state_regex = '^' + '|'.join(state_list) + '_'
 state_file_list = os.listdir(webscraping_output)
 emily_file_list = os.listdir(emily_download_path)
