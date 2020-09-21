@@ -234,6 +234,7 @@ def scrape_prices(months_for, suffix, my_dictionary, download_folder, skip_vals)
     driver.get('http://dam.gov.bd/market_daily_price_report?L=E')
     with open(skip_vals) as text_file:
         skip_list = [link.rstrip() for link in text_file]
+        text_file.close()
     text_file = open(skip_vals, mode='a+')
     for z in range(0,12): # months in a year
         for i in range(1, 8): # days of the week
@@ -281,6 +282,7 @@ def scrape_prices(months_for, suffix, my_dictionary, download_folder, skip_vals)
                         if na_check == 'No Market Found!':
                             print("no market here")
                             text_file.write('{} \n'.format(value))
+                            text_file.flush()
                         else:
                             time.sleep(1.5)
                             try:
@@ -308,12 +310,15 @@ def scrape_prices(months_for, suffix, my_dictionary, download_folder, skip_vals)
                                     wr.writerow([d.text for d in row.find_elements_by_css_selector('th')])
                                     wr.writerow([d.text for d in row.find_elements_by_css_selector('td')])
                             text_file.write('{} \n'.format(value))
+                            text_file.flush()
+
                             time.sleep(3)
                     else:
                         print('skipping {}'.format(value))
 
 
                 time.sleep(10)
+    text_file.close()
 
 def split_dicts(dictionary, n_partions):
     dict_list = []
@@ -325,7 +330,7 @@ def split_dicts(dictionary, n_partions):
 
 
 if __name__ =='__main__':
-    with open('/Users/joefish/Downloads/dict_1st_half.pickle', 'rb') as f:
+    with open('/Users/joefish/Documents/GitHub/state_scraping/dict_1st_half.pickle', 'rb') as f:
         my_dictionary = pickle.load(f)
     # dict_vals = my_dictionary.values()
     list_of_suffixes = ['_' + str(x) for x in range(1, 366)]
@@ -337,7 +342,7 @@ if __name__ =='__main__':
     with Pool(4) as p:
         p.map(scrape_prices, [months_for]*len(list_of_dicts), list_of_suffixes*len(list_of_dicts), list_of_dicts,
               ['/Users/joefish/Desktop/market_prices/']*len(list_of_dicts),
-              ['/Users/joefish/Desktop/market_prices/skip_vals.txt']*len(list_of_dicts))
+              ['/Users/joefish/Documents/GitHub/state_scraping/skip_vals.txt']*len(list_of_dicts))
     p.close()
     p.join()
 
